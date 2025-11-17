@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herbal Plants - Environmental and Agricultural Sustainability</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #ff6b35;
+            --accent-color: #27ae60;
+            --light-bg: #ecf0f1;
+            --white: #ffffff;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --border-color: #bdc3c7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f8f9fa;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #34495e 100%);
+            color: var(--white);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-subtitle {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Info Cards */
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--secondary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .info-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .info-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Grid Layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Team Section */
+        .team-member {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-member-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .team-member h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member .id {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Activity Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--secondary-color);
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            width: 48%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            text-align: right;
+            padding-right: 2rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 52%;
+            padding-left: 2rem;
+        }
+
+        .timeline-item-content {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline-item-content h4 {
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Herbs Grid */
+        .herb-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .herb-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .herb-card-icon {
+            height: 100px;
+            background: linear-gradient(135deg, var(--accent-color), #16a085);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .herb-card-content {
+            padding: 1.5rem;
+        }
+
+        .herb-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .herb-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Workshop Section */
+        .workshop-item {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .workshop-item h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .workshop-item p {
+            color: var(--text-light);
+        }
+
+        /* Statistics */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-close {
+            color: var(--text-light);
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--secondary-color);
+        }
+
+        .modal-content h2 {
+            text-align: left;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-bg);
+        }
+
+        .modal-content h2::after {
+            display: none;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--secondary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .btn:hover {
+            background: #e55a2b;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background: #229954;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section {
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .footer-section p {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.8rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                width: 100%;
+                margin-left: 0;
+                padding-left: 60px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #ff8c42 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .highlight-box h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:hover {
+            background: var(--light-bg);
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--border-color);
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 1rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            color: var(--text-light);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .tab-button.active {
+            color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon">🌿</div>
+                <span>Herbal Plants</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#activities">Activities</a></li>
+                    <li><a href="#herbs">Herbs</a></li>
+                    <li><a href="#workshops">Workshops</a></li>
+                    <li><a href="#outcomes">Outcomes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Herbal Plants</h1>
+            <p class="hero-subtitle">Environmental and Agricultural Sustainability</p>
+            <p>A comprehensive community service project focused on promoting sustainable herbalism and agricultural practices through education, demonstration, and community engagement.</p>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview">
+        <div class="container">
+            <h2>Project Overview</h2>
+            
+            <div class="highlight-box">
+                <h3>Project Title</h3>
+                <p>Environmental and Agricultural Sustainability: Herbal Gardening Initiative for Community Wellness</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3>📚 Institution</h3>
+                    <p><strong>Sri Venkateswara College of Engineering & Technology (Autonomous)</strong></p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Department of Computer Science Engineering<br>Affiliated to JNTUA, Anantapuramu</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎯 Primary Goal</h3>
+                    <p>To establish a sustainable herbal garden demonstration plot and conduct educational workshops that empower community members with knowledge about growing and utilizing medicinal and culinary herbs.</p>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3>📍 Location</h3>
+                    <p>Community Garden<br>R.V.S. Nagar, Chittoor-517127<br>Andhra Pradesh, India</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>⏱️ Duration</h3>
+                    <p><strong>Academic Year:</strong> 2025-2026<br><strong>Total Hours:</strong> 120+ hours<br><strong>Timeframe:</strong> 8 weeks</p>
+                </div>
+            </div>
+
+            <div class="info-card" style="margin-top: 2rem;">
+                <h3>📋 Project Scope</h3>
+                <p>The project encompasses establishing a 4-square-meter demonstration herb garden plot with ten varieties of common and beneficial herbal plants, organizing three hands-on educational workshops, creating resource materials, and documenting the entire process through activity logs and community feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <div class="container">
+            <h2>Project Team</h2>
+            
+            <div class="info-card" style="margin-bottom: 2rem;">
+                <h3>Faculty Guide</h3>
+                <p><strong>Dr. M. Nabathi Mam</strong><br>Associate Professor<br>Department of Computer Science Engineering</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="team-member">
+                    <div class="team-member-avatar">👤</div>
+                    <h4>Aashish Bishokarma</h4>
+                    <p class="id">23781A3764</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">👤</div>
+                    <h4>Marani Mahesh</h4>
+                    <p class="id">23781A3733</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">👤</div>
+                    <h4>Muthirevula Puneeth</h4>
+                    <p class="id">23781A3735</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">👤</div>
+                    <h4>Busangi Chandhra Mohan</h4>
+                    <p class="id">23781A3708</p>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-member-avatar">👤</div>
+                    <h4>Aman Tirkey</h4>
+                    <p class="id">23781A3702</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section>
+        <div class="container">
+            <h2>Project Statistics</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Square Meters<br>Garden Plot</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Herb Varieties<br>Cultivated</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Educational<br>Workshops</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Community<br>Participants</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities">
+        <div class="container">
+            <h2>Key Activities & Implementation</h2>
+            
+            <div class="tabs">
+                <button class="tab-button active" onclick="switchTab(event, 'garden')">Garden Establishment</button>
+                <button class="tab-button" onclick="switchTab(event, 'workshops')">Workshops</button>
+                <button class="tab-button" onclick="switchTab(event, 'resources')">Resources</button>
+            </div>
+
+            <div id="garden" class="tab-content active">
+                <div class="grid-2">
+                    <div class="info-card">
+                        <h3>🌱 Soil Preparation</h3>
+                        <p>The garden plot was prepared by clearing the designated area, testing the soil composition, and amending it with organic compost to ensure optimal growing conditions for the herbal plants.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>🌿 Planting</h3>
+                        <p>Ten varieties of common and beneficial herbal plants were selected and planted, including mint, basil, rosemary, lavender, chamomile, and other medicinal herbs using seedlings from local nurseries.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>💧 Maintenance</h3>
+                        <p>Regular watering, weeding, and pest management were performed to ensure healthy plant growth. A maintenance schedule was created for the community garden supervisor.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>📊 Monitoring</h3>
+                        <p>Plant growth was monitored weekly, with detailed records maintained in activity logs. Observations about plant health, pest issues, and seasonal changes were documented.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="workshops" class="tab-content">
+                <div class="workshop-item">
+                    <h4>Workshop 1: Basics of Herbal Plant Care</h4>
+                    <p><strong>Focus:</strong> Proper soil preparation, lighting requirements, and harvesting techniques for optimal plant health and yield.</p>
+                </div>
+
+                <div class="workshop-item">
+                    <h4>Workshop 2: Herbal Identification and Uses</h4>
+                    <p><strong>Focus:</strong> Distinguishing key herbs by appearance, understanding their traditional applications in culinary and medicinal contexts, and safety considerations.</p>
+                </div>
+
+                <div class="workshop-item">
+                    <h4>Workshop 3: Simple Herbal Preparations</h4>
+                    <p><strong>Focus:</strong> Hands-on demonstrations on making herbal teas, tinctures, infused oils, and other simple preparations for personal wellness.</p>
+                </div>
+            </div>
+
+            <div id="resources" class="tab-content">
+                <div class="info-card">
+                    <h3>📖 Local Herbal Guide Pamphlet</h3>
+                    <p>A comprehensive "Local Herbal Guide" pamphlet was created, printed, and distributed to community members. The guide includes:</p>
+                    <ul style="margin-top: 1rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li>Identification guide for the ten herb varieties</li>
+                        <li>Growing instructions and care tips</li>
+                        <li>Traditional and modern uses</li>
+                        <li>Safety precautions and contraindications</li>
+                        <li>Simple recipes for herbal preparations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Herbs Section -->
+    <section id="herbs">
+        <div class="container">
+            <h2>Cultivated Herb Varieties</h2>
+            
+            <div class="grid-3">
+                <div class="herb-card" onclick="showHerbDetail('mint')">
+                    <div class="herb-card-icon">🌱</div>
+                    <div class="herb-card-content">
+                        <h4>Mint (Pudina)</h4>
+                        <p><strong>Uses:</strong> Digestive aid, tea, culinary<br><strong>Care:</strong> Moderate water, partial shade</p>
+                    </div>
+                </div>
+
+                <div class="herb-card" onclick="showHerbDetail('basil')">
+                    <div class="herb-card-icon">🌿</div>
+                    <div class="herb-card-content">
+                        <h4>Basil (Tulsi)</h4>
+                        <p><strong>Uses:</strong> Immune booster, culinary<br><strong>Care:</strong> Full sun, regular watering</p>
+                    </div>
+                </div>
+
+                <div class="herb-card" onclick="showHerbDetail('rosemary')">
+                    <div class="herb-card-icon">🪴</div>
+                    <div class="herb-card-content">
+                        <h4>Rosemary</h4>
+                        <p><strong>Uses:</strong> Memory aid, culinary<br><strong>Care:</strong> Full sun, drought tolerant</p>
+                    </div>
+                </div>
+
+                <div class="herb-card" onclick="showHerbDetail('lavender')">
+                    <div class="herb-card-icon">💜</div>
+                    <div class="herb-card-content">
+                        <h4>Lavender</h4>
+                        <p><strong>Uses:</strong> Relaxation, aromatherapy<br><strong>Care:</strong> Full sun, well-drained soil</p>
+                    </div>
+                </div>
+
+                <div class="herb-card" onclick="showHerbDetail('chamomile')">
+                    <div class="herb-card-icon">🌼</div>
+                    <div class="herb-card-content">
+                        <h4>Chamomile</h4>
+                        <p><strong>Uses:</strong> Sleep aid, calming tea<br><strong>Care:</strong> Partial shade, moderate water</p>
+                    </div>
+                </div>
+
+                <div class="herb-card" onclick="showHerbDetail('garlic')">
+                    <div class="herb-card-icon">🧄</div>
+                    <div class="herb-card-content">
+                        <h4>Garlic</h4>
+                        <p><strong>Uses:</strong> Immune support, culinary<br><strong>Care:</strong> Full sun, well-drained soil</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workshops Section -->
+    <section id="workshops">
+        <div class="container">
+            <h2>Educational Workshops</h2>
+            
+            <div class="grid-2">
+                <div class="workshop-item" style="border-left-color: var(--secondary-color);">
+                    <h4>🌱 Workshop 1: Basics of Herbal Plant Care</h4>
+                    <p><strong>Topics Covered:</strong></p>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                        <li>Soil composition and preparation</li>
+                        <li>Light and water requirements</li>
+                        <li>Proper harvesting techniques</li>
+                        <li>Seasonal care and maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="workshop-item" style="border-left-color: var(--accent-color);">
+                    <h4>🔍 Workshop 2: Herbal Identification and Uses</h4>
+                    <p><strong>Topics Covered:</strong></p>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                        <li>Visual identification of herbs</li>
+                        <li>Traditional medicinal applications</li>
+                        <li>Culinary uses and flavor profiles</li>
+                        <li>Safety and contraindications</li>
+                    </ul>
+                </div>
+
+                <div class="workshop-item" style="border-left-color: var(--secondary-color);">
+                    <h4>🧪 Workshop 3: Simple Herbal Preparations</h4>
+                    <p><strong>Topics Covered:</strong></p>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                        <li>Making herbal teas and infusions</li>
+                        <li>Preparing tinctures and extracts</li>
+                        <li>Creating infused oils</li>
+                        <li>Storage and preservation methods</li>
+                    </ul>
+                </div>
+
+                <div class="workshop-item" style="border-left-color: var(--accent-color);">
+                    <h4>📚 Resource Materials</h4>
+                    <p><strong>Distributed to Participants:</strong></p>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                        <li>Local Herbal Guide pamphlet</li>
+                        <li>Quick reference cards</li>
+                        <li>Recipe booklets</li>
+                        <li>Care instruction sheets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcomes Section -->
+    <section id="outcomes">
+        <div class="container">
+            <h2>Project Outcomes & Impact</h2>
+            
+            <div class="grid-2">
+                <div class="info-card">
+                    <h3>🎯 Knowledge Transfer</h3>
+                    <p>Over 50 community members gained practical knowledge about growing and utilizing medicinal and culinary herbs, with increased awareness about sustainable agricultural practices and natural wellness approaches.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🌱 Garden Establishment</h3>
+                    <p>Successfully established a 4-square-meter demonstration herb garden with 10 varieties of plants, serving as a living resource and educational tool for the community.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>📖 Resource Creation</h3>
+                    <p>Developed and distributed comprehensive educational materials including the Local Herbal Guide pamphlet, recipe cards, and care instruction sheets to ensure long-term community benefit.</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🤝 Community Engagement</h3>
+                    <p>Fostered stronger community connections through collaborative gardening activities, knowledge-sharing workshops, and the creation of a sustainable resource for ongoing education.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <h3>Key Learning & Reflection</h3>
+                <p>This project demonstrated that simplicity and hands-on engagement are key to effective community education. The community responded most positively to practical demonstrations and easy-to-understand resources. By focusing on achievable goals and sustainable practices, we created a lasting impact that extends beyond the project duration.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity Log Section -->
+    <section>
+        <div class="container">
+            <h2>Weekly Activity Summary</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Week</th>
+                        <th>Primary Activities</th>
+                        <th>Learning Outcomes</th>
+                        <th>Participants</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Week 1</strong></td>
+                        <td>Site selection and soil testing</td>
+                        <td>Understanding soil composition and pH levels</td>
+                        <td>Team + 5 volunteers</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 2</strong></td>
+                        <td>Garden plot preparation and planting</td>
+                        <td>Proper planting techniques and spacing</td>
+                        <td>Team + 8 volunteers</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 3</strong></td>
+                        <td>Workshop 1: Plant Care Basics</td>
+                        <td>Community education on herb cultivation</td>
+                        <td>15-20 participants</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 4</strong></td>
+                        <td>Village visits and pharmaceutical research</td>
+                        <td>Traditional uses and medical properties of herbs</td>
+                        <td>Team + local experts</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 5</strong></td>
+                        <td>Workshop 2: Herb Identification</td>
+                        <td>Visual identification and traditional applications</td>
+                        <td>18-25 participants</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 6</strong></td>
+                        <td>Resource material creation</td>
+                        <td>Documentation and knowledge compilation</td>
+                        <td>Team members</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 7</strong></td>
+                        <td>Workshop 3: Herbal Preparations</td>
+                        <td>Hands-on preparation techniques</td>
+                        <td>20-30 participants</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Week 8</strong></td>
+                        <td>Documentation and final evaluation</td>
+                        <td>Project impact assessment and reflection</td>
+                        <td>Team + community feedback</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Project Information</h4>
+                <p>Community Service Project (CSP) - Environmental and Agricultural Sustainability</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Institution</h4>
+                <p>Sri Venkateswara College of Engineering & Technology (Autonomous)<br>
+                Department of Computer Science Engineering<br>
+                R.V.S. Nagar, Chittoor-517127, Andhra Pradesh, India</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Academic Year</h4>
+                <p>2025-2026</p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Herbal Plants Team. All rights reserved.</p>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem;">Designed for community education and sustainable development</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Herb Detail Modal -->
+    <div id="herbModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2 id="modalHerbName"></h2>
+            <div id="modalHerbContent"></div>
+        </div>
+    </div>
+
+    <script>
+        // Herb details database
+        const herbDetails = {
+            mint: {
+                name: 'Mint (Pudina)',
+                content: `
+                    <h3>Scientific Name:</h3>
+                    <p>Mentha spicata</p>
+                    
+                    <h3>Growing Requirements:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Water: Moderate to high, keep soil consistently moist</li>
+                        <li>Light: Partial shade to full sun</li>
+                        <li>Soil: Well-draining, rich in organic matter</li>
+                        <li>Temperature: Cool to warm climates</li>
+                    </ul>
+                    
+                    <h3>Uses:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li><strong>Medicinal:</strong> Digestive aid, relieves indigestion and bloating</li>
+                        <li><strong>Culinary:</strong> Teas, beverages, desserts, and savory dishes</li>
+                        <li><strong>Aromatherapy:</strong> Refreshing and energizing</li>
+                    </ul>
+                    
+                    <h3>Harvesting:</h3>
+                    <p>Pinch off leaves as needed. Best harvested in the morning after dew dries. Regular harvesting encourages bushier growth.</p>
+                `
+            },
+            basil: {
+                name: 'Basil (Tulsi)',
+                content: `
+                    <h3>Scientific Name:</h3>
+                    <p>Ocimum basilicum</p>
+                    
+                    <h3>Growing Requirements:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Water: Regular watering, keep soil moist but not waterlogged</li>
+                        <li>Light: Full sun (6-8 hours daily)</li>
+                        <li>Soil: Well-draining, fertile soil</li>
+                        <li>Temperature: Warm climates, sensitive to frost</li>
+                    </ul>
+                    
+                    <h3>Uses:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li><strong>Medicinal:</strong> Immune booster, anti-inflammatory, cough remedy</li>
+                        <li><strong>Culinary:</strong> Italian dishes, pesto, salads, and beverages</li>
+                        <li><strong>Traditional:</strong> Used in Ayurvedic medicine for centuries</li>
+                    </ul>
+                    
+                    <h3>Harvesting:</h3>
+                    <p>Pinch off leaves from the top to encourage branching. Harvest regularly to prevent flowering and maintain leaf quality.</p>
+                `
+            },
+            rosemary: {
+                name: 'Rosemary',
+                content: `
+                    <h3>Scientific Name:</h3>
+                    <p>Rosmarinus officinalis</p>
+                    
+                    <h3>Growing Requirements:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Water: Low to moderate, drought tolerant once established</li>
+                        <li>Light: Full sun (6+ hours daily)</li>
+                        <li>Soil: Well-draining, sandy or rocky soil preferred</li>
+                        <li>Temperature: Mediterranean climate, frost hardy</li>
+                    </ul>
+                    
+                    <h3>Uses:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li><strong>Culinary:</strong> Seasoning for meats, vegetables, and breads</li>
+                        <li><strong>Medicinal:</strong> Memory enhancement, circulation improvement</li>
+                        <li><strong>Aromatherapy:</strong> Stimulating and uplifting</li>
+                    </ul>
+                    
+                    <h3>Harvesting:</h3>
+                    <p>Cut sprigs as needed. Can be used fresh or dried. Drying intensifies the flavor. Prune regularly to maintain shape.</p>
+                `
+            },
+            lavender: {
+                name: 'Lavender',
+                content: `
+                    <h3>Scientific Name:</h3>
+                    <p>Lavandula angustifolia</p>
+                    
+                    <h3>Growing Requirements:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Water: Low, drought tolerant, avoid overwatering</li>
+                        <li>Light: Full sun (6-8 hours daily)</li>
+                        <li>Soil: Well-draining, sandy, poor soil acceptable</li>
+                        <li>Temperature: Mediterranean climate, frost hardy</li>
+                    </ul>
+                    
+                    <h3>Uses:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li><strong>Aromatherapy:</strong> Relaxation, stress relief, sleep aid</li>
+                        <li><strong>Culinary:</strong> Lavender tea, honey, and baked goods</li>
+                        <li><strong>Medicinal:</strong> Anxiety reduction, wound healing</li>
+                    </ul>
+                    
+                    <h3>Harvesting:</h3>
+                    <p>Harvest flowers when they're in full bloom. Dry by hanging bundles upside down in a cool, dark place. Fragrance improves with drying.</p>
+                `
+            },
+            chamomile: {
+                name: 'Chamomile',
+                content: `
+                    <h3>Scientific Name:</h3>
+                    <p>Matricaria chamomilla</p>
+                    
+                    <h3>Growing Requirements:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Water: Moderate, keep soil consistently moist</li>
+                        <li>Light: Partial shade to full sun</li>
+                        <li>Soil: Well-draining, fertile soil</li>
+                        <li>Temperature: Cool to warm climates</li>
+                    </ul>
+                    
+                    <h3>Uses:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li><strong>Medicinal:</strong> Sleep aid, calming, digestive support</li>
+                        <li><strong>Culinary:</strong> Herbal tea, beverages</li>
+                        <li><strong>Skincare:</strong> Soothing and anti-inflammatory</li>
+                    </ul>
+                    
+                    <h3>Harvesting:</h3>
+                    <p>Harvest flowers when fully open. Dry by spreading on a clean cloth or hanging. Best used fresh or dried in teas.</p>
+                `
+            },
+            garlic: {
+                name: 'Garlic',
+                content: `
+                    <h3>Scientific Name:</h3>
+                    <p>Allium sativum</p>
+                    
+                    <h3>Growing Requirements:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li>Water: Moderate, consistent moisture during growing season</li>
+                        <li>Light: Full sun (6+ hours daily)</li>
+                        <li>Soil: Well-draining, rich in organic matter</li>
+                        <li>Temperature: Cool season crop, planted in fall</li>
+                    </ul>
+                    
+                    <h3>Uses:</h3>
+                    <ul style="margin-left: 1.5rem;">
+                        <li><strong>Culinary:</strong> Essential ingredient in many cuisines worldwide</li>
+                        <li><strong>Medicinal:</strong> Immune support, antibacterial, cardiovascular health</li>
+                        <li><strong>Traditional:</strong> Used for centuries in folk medicine</li>
+                    </ul>
+                    
+                    <h3>Harvesting:</h3>
+                    <p>Harvest when leaves turn brown (typically June-July). Cure bulbs in a warm, dry place for 2-3 weeks before storage.</p>
+                `
+            }
+        };
+
+        // Modal functions
+        function showHerbDetail(herb) {
+            const modal = document.getElementById('herbModal');
+            const name = document.getElementById('modalHerbName');
+            const content = document.getElementById('modalHerbContent');
+            
+            if (herbDetails[herb]) {
+                name.textContent = herbDetails[herb].name;
+                content.innerHTML = herbDetails[herb].content;
+                modal.style.display = 'block';
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('herbModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('herbModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Tab switching
+        function switchTab(event, tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+            
+            contents.forEach(content => content.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.info-card, .team-member, .herb-card, .stat-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
