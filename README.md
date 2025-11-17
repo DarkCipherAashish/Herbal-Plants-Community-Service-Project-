@@ -35,7 +35,7 @@ The project encompasses establishing a 4-square-meter demonstration herb garden 
 * Aashish Bishokarma (23781A3764)
 * Marani Mahesh (23781A3733)
 * Muthirevula Puneeth (23781A3735)
-* Busangi Chandhra Mohan (23781A3708)
+* Busagani Chandra Mohan (23781A3708)
 * Aman Tirkey (23781A3702)
 
 ---
